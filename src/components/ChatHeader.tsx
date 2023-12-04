@@ -1,4 +1,4 @@
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
 
 type Props = {
   profilePic: string;
@@ -7,7 +7,7 @@ type Props = {
 
 export const ChatHeader = ({ profilePic, name }: Props) => {
   return (
-    <div className="border-b  flex  flex-row  align-middle py-4">
+    <div className="border-b h-[70px] flex  flex-row  align-middle py-4">
       <div className="flex gap-4 flex-row">
         <Avatar>
           <AvatarImage src={profilePic} />
