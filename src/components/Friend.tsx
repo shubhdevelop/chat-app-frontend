@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 type FriendProps = { profilePic: string; name: string; unread: string };
 
 const Friend = ({ profilePic, name, unread }: FriendProps) => {
@@ -9,6 +9,7 @@ const Friend = ({ profilePic, name, unread }: FriendProps) => {
           <Avatar>
             <Avatar>
               <AvatarImage src={profilePic} />
+              <AvatarFallback>CN</AvatarFallback>
             </Avatar>
           </Avatar>
         </div>
