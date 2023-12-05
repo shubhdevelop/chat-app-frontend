@@ -6,8 +6,10 @@ function MainLayout() {
   return (
     <>
       <Navbar />
-      <Outlet />
-      <Footer></Footer>
+      <div className="h-[calc(100vh-140px)]">
+        <Outlet />
+      </div>
+      <Footer />
     </>
   );
 }

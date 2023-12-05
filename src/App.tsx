@@ -1,13 +1,13 @@
+import { Outlet } from "react-router-dom";
 import "./App.css";
-import ChatWindow from "./components/ChatWindow";
 import FriendList from "./components/FriendList";
 
 function App() {
   return (
     <>
-      <div className="container-lg grid grid-cols-12 gap-x-2">
+      <div className=" h-[calc(100vh-140px)] container-lg grid grid-cols-12 gap-x-2">
         <FriendList />
-        <ChatWindow />
+        <Outlet />
       </div>
     </>
   );

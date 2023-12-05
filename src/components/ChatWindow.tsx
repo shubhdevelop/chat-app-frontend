@@ -4,7 +4,7 @@ import { TextInput } from "./TextInput";
 
 function ChatWindow() {
   return (
-    <div className="col-span-9">
+    <div className="col-span-9 h-full">
       <ChatHeader name={"Shubham"} profilePic="https://github.com/shadcn.png" />
       <ChatArea />
       <TextInput />
