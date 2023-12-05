@@ -7,10 +7,8 @@ const Friend = ({ profilePic, name, unread }: FriendProps) => {
       <div className="flex flex-row gap-4  align-middle">
         <div className="">
           <Avatar>
-            <Avatar>
-              <AvatarImage src={profilePic} />
-              <AvatarFallback>CN</AvatarFallback>
-            </Avatar>
+            <AvatarImage src={profilePic} />
+            <AvatarFallback>CN</AvatarFallback>
           </Avatar>
         </div>
         <div className="">

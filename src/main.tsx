@@ -9,7 +9,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import MainLayout from "./layout/MainLayout.tsx";
-import ChatWindow from "./components/ChatWindow.tsx";
+import ChatWindow from "./components/chat/ChatWindow.tsx";
 import Home from "./components/Home.tsx";
 import { Login } from "./components/Login.tsx";
 import { SignUp } from "./components/SignUp.tsx";
