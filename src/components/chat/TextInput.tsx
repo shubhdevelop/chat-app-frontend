@@ -1,5 +1,5 @@
 import { Input } from "@/components/ui/input";
-import { AllChat, Chat } from "@/utils/chat.types";
+import { AllChat, Chat } from "@/types/chat.types";
 import EmojiPicker from "emoji-picker-react";
 import { Smile, Mic, Image, Heart, SendHorizontal } from "lucide-react";
 import { SetStateAction, useState } from "react";
@@ -54,8 +54,14 @@ export const TextInput = ({ allChats, setAllChats }: TextInputProps) => {
             id: Math.random(),
             type: "sent",
           };
+
+          const reply: Chat = {
+            content: "Replying to you: " + message,
+            id: Math.random(),
+            type: "received",
+          };
           if (newChat) {
-            setAllChats([...allChats, newChat]);
+            setAllChats([...allChats, newChat, reply]);
             setMessage("");
           }
         }}

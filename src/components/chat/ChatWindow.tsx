@@ -1,4 +1,4 @@
-import { chats } from "@/utils/chat.types";
+import { chats } from "@/types/chat.types";
 import { ChatArea } from "./ChatArea";
 import { ChatHeader } from "./ChatHeader";
 import { TextInput } from "./TextInput";

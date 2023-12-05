@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import Chat from "./chat";
 import React from "react";
-import { AllChat } from "@/utils/chat.types";
+import { AllChat } from "@/types/chat.types";
 
 type ChatAreaProps = {
   allChats: AllChat;
