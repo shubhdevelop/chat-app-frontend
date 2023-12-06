@@ -24,9 +24,11 @@ export const ChatArea = ({ allChats }: ChatAreaProps) => {
     >
       {allChats.map((chat) => (
         <Chat
+          key={chat.id}
           varient={`${chat.type}`}
           profilePic="https://github.com/shadcn.png"
           message={chat.content}
+          img={chat.img}
         />
       ))}
     </div>

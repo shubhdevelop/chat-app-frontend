@@ -10,7 +10,7 @@ function ChatWindow() {
     <div className="col-span-9 h-[calc(100vh-140px)] ">
       <ChatHeader name={"Shubham"} profilePic="https://github.com/shadcn.png" />
       <ChatArea allChats={allChats} />
-      <TextInput allChats={allChats} setAllChats={setAllChats} />
+      <TextInput setAllChats={setAllChats} />
     </div>
   );
 }

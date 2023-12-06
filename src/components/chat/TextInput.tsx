@@ -3,17 +3,17 @@ import { AllChat, Chat } from "@/types/chat.types";
 import EmojiPicker from "emoji-picker-react";
 import { Smile, Mic, Image, Heart, SendHorizontal } from "lucide-react";
 import { SetStateAction, useState } from "react";
+import ImageInput from "./ImageInput";
 
 type TextInputProps = {
-  allChats: AllChat;
   setAllChats: React.Dispatch<SetStateAction<AllChat>>;
 };
 
-export const TextInput = ({ allChats, setAllChats }: TextInputProps) => {
+export const TextInput = ({ setAllChats }: TextInputProps) => {
   const [isEmojiPickerInFocus, setIsEmojiPickerInFocus] = useState(false);
   const [message, setMessage] = useState("");
   return (
-    <div className="flex h-[70px] flex-row gap-2 w-full ">
+    <div className="flex h-[70px] flex-row gap-2 w-full relative">
       <Smile
         onClick={() => {
           setIsEmojiPickerInFocus((prev) => !prev);
@@ -61,7 +61,7 @@ export const TextInput = ({ allChats, setAllChats }: TextInputProps) => {
             type: "received",
           };
           if (newChat) {
-            setAllChats([...allChats, newChat, reply]);
+            setAllChats((prev) => [...prev, newChat, reply]);
             setMessage("");
           }
         }}
@@ -72,11 +72,7 @@ export const TextInput = ({ allChats, setAllChats }: TextInputProps) => {
         strokeWidth={1}
         className="relative bottom-[-15px] cursor-pointer"
       />
-      <Image
-        size={40}
-        strokeWidth={1}
-        className="relative bottom-[-15px] cursor-pointer"
-      />
+      <ImageInput setAllChats={setAllChats} />
       <Heart
         size={40}
         strokeWidth={1}
