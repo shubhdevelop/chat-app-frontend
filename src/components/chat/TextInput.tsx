@@ -2,7 +2,7 @@ import { Input } from "@/components/ui/input";
 import { AllChat, Chat } from "@/types/chat.types";
 import EmojiPicker from "emoji-picker-react";
 import { Smile, Mic, Image, Heart, SendHorizontal } from "lucide-react";
-import { SetStateAction, useState } from "react";
+import { MouseEventHandler, SetStateAction, useState } from "react";
 import ImageInput from "./ImageInput";
 
 type TextInputProps = {
@@ -12,6 +12,27 @@ type TextInputProps = {
 export const TextInput = ({ setAllChats }: TextInputProps) => {
   const [isEmojiPickerInFocus, setIsEmojiPickerInFocus] = useState(false);
   const [message, setMessage] = useState("");
+
+  const handleSendMessage: MouseEventHandler<SVGSVGElement> = () => {
+    if (message) {
+      const newChat: Chat = {
+        content: message,
+        id: Math.random(),
+        type: "sent",
+      };
+
+      const reply: Chat = {
+        content: "Replying to you: " + message,
+        id: Math.random(),
+        type: "received",
+      };
+      if (newChat) {
+        setAllChats((prev) => [...prev, newChat, reply]);
+        setMessage("");
+      }
+    }
+  };
+
   return (
     <div className="flex h-[70px] flex-row gap-2 w-full relative">
       <Smile
@@ -48,23 +69,7 @@ export const TextInput = ({ setAllChats }: TextInputProps) => {
       <SendHorizontal
         size={40}
         strokeWidth={1}
-        onClick={() => {
-          const newChat: Chat = {
-            content: message,
-            id: Math.random(),
-            type: "sent",
-          };
-
-          const reply: Chat = {
-            content: "Replying to you: " + message,
-            id: Math.random(),
-            type: "received",
-          };
-          if (newChat) {
-            setAllChats((prev) => [...prev, newChat, reply]);
-            setMessage("");
-          }
-        }}
+        onClick={handleSendMessage}
         className="relative bottom-[-15px] cursor-pointer"
       />
       <Mic

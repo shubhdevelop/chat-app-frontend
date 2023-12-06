@@ -18,7 +18,7 @@ const ImageInput: React.FC<TextInputProps> = ({
       const file: FileList[0] | null = e.currentTarget.files[0];
       if (file) {
         // Check if the selected file is an image
-        if (file.type.startsWith("image/")) {
+        if (file.type.startsWith("image/") || file.type.startsWith("video/")) {
           setIsPreviewVisible(true);
           // Do something with the selected image (e.g., set it to state)
           const reader = new FileReader();
@@ -89,7 +89,7 @@ const ImageInput: React.FC<TextInputProps> = ({
         <input
           type="file"
           id="fileInput"
-          accept="image/*,.mp4,.mov,.png,.jpg,.jpeg,.svg "
+          accept="image/* video/*,.mp4,.mov,.png,.jpg,.jpeg,.svg "
           style={{
             position: "absolute",
             width: "100%",
@@ -104,7 +104,7 @@ const ImageInput: React.FC<TextInputProps> = ({
         <span
           style={{
             display: "inline-block",
-            padding: "8px 16px",
+            padding: "1px",
             border: "0px solid #ccc",
             borderRadius: "4px",
             background: "transparent",
@@ -114,7 +114,7 @@ const ImageInput: React.FC<TextInputProps> = ({
           <Image
             size={40}
             strokeWidth={1}
-            className="relative bottom-[-7px] cursor-pointer"
+            className="relative bottom-[-12px] cursor-pointer"
           />
         </span>
       </label>
