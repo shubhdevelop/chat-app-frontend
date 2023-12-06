@@ -34,7 +34,7 @@ const ImageInput: React.FC<TextInputProps> = ({
     }
   };
 
-  const handleImageSumbit: MouseEventHandler<SVGSVGElement> = () => {
+  const handleImageSumbit: MouseEventHandler<HTMLButtonElement> = () => {
     const newChat: Chat = {
       content: "",
       id: Math.random(),
@@ -42,11 +42,6 @@ const ImageInput: React.FC<TextInputProps> = ({
       img: new String(selectedImage) as string,
     };
 
-    const reply: Chat = {
-      content: "Replying to you: " + "",
-      id: Math.random(),
-      type: "received",
-    };
     if (newChat) {
       console.log(selectedImage);
       setIsPreviewVisible(false);
@@ -74,8 +69,12 @@ const ImageInput: React.FC<TextInputProps> = ({
           strokeWidth={1}
           className="absolute top-[-30px] left-[-20px] bg-black rounded-full bottom-[-7px] cursor-pointer"
         />
-        <Button variant={"outline"} className="mt-2">
-          <SendHorizonal onClick={handleImageSumbit} />
+        <Button
+          variant={"outline"}
+          onClick={handleImageSumbit}
+          className="mt-2"
+        >
+          <SendHorizonal />
         </Button>
       </div>
       <label
