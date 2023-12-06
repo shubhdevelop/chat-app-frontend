@@ -5,7 +5,7 @@ type Props = {
   message: string;
   profilePic: string;
   varient: "sent" | "received";
-  img: string;
+  img: string | undefined;
 };
 
 function chat({ message, profilePic, varient, img }: Props) {
@@ -25,8 +25,11 @@ function chat({ message, profilePic, varient, img }: Props) {
         <AvatarFallback>CN</AvatarFallback>
       </Avatar>
       <Card className={` text-white max-w-4xl w-max py-2 px-4 ${style}`}>
-        <img src={img} alt="" />
-        <p className="leading-7 [&:not(:first-child)]:mt-6">{message}</p>
+        {img ? (
+          <img src={img} alt="" />
+        ) : (
+          <p className="leading-7 [&:not(:first-child)]:mt-6">{message}</p>
+        )}
       </Card>
     </div>
   );
