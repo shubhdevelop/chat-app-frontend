@@ -26,7 +26,7 @@ function chat({ message, profilePic, varient, img }: Props) {
       </Avatar>
       <Card className={` text-white max-w-4xl w-max py-2 px-4 ${style}`}>
         {img ? (
-          <img src={img} alt="" />
+          <img src={img} alt="" onClick={() => {}} />
         ) : (
           <p className="leading-7 [&:not(:first-child)]:mt-6">{message}</p>
         )}

@@ -1,5 +1,10 @@
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-type FriendProps = { profilePic: string; name: string; unread: string };
+type FriendProps = {
+  profilePic: string;
+  name: string;
+  unread: string;
+  id: number;
+};
 
 const Friend = ({ profilePic, name, unread }: FriendProps) => {
   return (
