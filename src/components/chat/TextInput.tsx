@@ -13,6 +13,24 @@ export const TextInput = ({ setAllChats }: TextInputProps) => {
   const [isEmojiPickerInFocus, setIsEmojiPickerInFocus] = useState(false);
   const [message, setMessage] = useState("");
 
+  const handleSendHeart: MouseEventHandler<SVGSVGElement> = () => {
+    const newChat: Chat = {
+      content: "❤️",
+      id: Math.random(),
+      type: "sent",
+    };
+
+    const reply: Chat = {
+      content: "Replying to you: " + message,
+      id: Math.random(),
+      type: "received",
+    };
+    if (newChat) {
+      setAllChats((prev) => [...prev, newChat, reply]);
+      setMessage("");
+    }
+  };
+
   const handleSendMessage: MouseEventHandler<SVGSVGElement> = () => {
     if (message) {
       const newChat: Chat = {
@@ -79,6 +97,7 @@ export const TextInput = ({ setAllChats }: TextInputProps) => {
       />
       <ImageInput setAllChats={setAllChats} />
       <Heart
+        onClick={handleSendHeart}
         size={40}
         strokeWidth={1}
         className="relative bottom-[-15px] cursor-pointer"
