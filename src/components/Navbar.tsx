@@ -10,7 +10,7 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav className="h-[70px]  border-b-2 flex flex-row gap-6 justify-between align-middle">
-      <NavLink to={"/"}>
+      <NavLink unstable_viewTransition={true} to={"/"}>
         <TypographyH2>ChatApp</TypographyH2>
       </NavLink>
       <NavigationMenu>
@@ -27,6 +27,7 @@ const Navbar = () => {
           </NavigationMenuItem>
           <NavigationMenuItem className=" pr-4">
             <NavLink
+              unstable_viewTransition={true}
               className={({ isActive }) =>
                 `${isActive ? "text-blue-700" : ""} text-xl`
               }
@@ -36,12 +37,12 @@ const Navbar = () => {
             </NavLink>
           </NavigationMenuItem>
           <NavigationMenuItem className=" pr-4">
-            <NavLink to={"/Signup"}>
+            <NavLink to={"/Signup"} unstable_viewTransition={true}>
               <Button> Sign Up</Button>
             </NavLink>
           </NavigationMenuItem>
           <NavigationMenuItem className=" pr-4">
-            <NavLink to={"/login"}>
+            <NavLink to={"/login"} unstable_viewTransition={true}>
               <Button variant={"outline"}>Login</Button>
             </NavLink>
           </NavigationMenuItem>
