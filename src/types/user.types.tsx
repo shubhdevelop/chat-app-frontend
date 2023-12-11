@@ -20,7 +20,7 @@ export const users: Users = [
     id: Math.random(),
   },
   {
-    name: "Prakash Raj",
+    name: "Prakash Raj ",
     chats: chats,
     id: Math.random(),
   },

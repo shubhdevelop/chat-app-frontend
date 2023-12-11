@@ -1,7 +1,11 @@
-type Props = {};
+import { Outlet } from "react-router-dom";
 
-function Profile({}: Props) {
-  return <div>Profile</div>;
-}
+const Profile: React.FC = () => {
+  return (
+    <div>
+      <Outlet></Outlet>
+    </div>
+  );
+};
 
 export default Profile;

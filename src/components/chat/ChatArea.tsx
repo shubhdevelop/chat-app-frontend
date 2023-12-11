@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 import Chat from "./chat";
 import React from "react";
 import { AllChat } from "@/types/chat.types";

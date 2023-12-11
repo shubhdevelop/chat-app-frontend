@@ -14,6 +14,7 @@ import Home from "./components/Home.tsx";
 import { Login } from "./components/Login.tsx";
 import { SignUp } from "./components/SignUp.tsx";
 import Profile from "./components/profile/Profile.tsx";
+import { Bio, bioLoader } from "./components/Bio.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,7 +22,13 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<SignUp />} />
-      <Route path="/profile" element={<Profile />}></Route>
+      <Route path="/profile" element={<Profile />}>
+        <Route
+          path="/profile/:userId"
+          element={<Bio />}
+          loader={bioLoader}
+        ></Route>
+      </Route>
       <Route path="/direct" element={<App />}>
         <Route index element={<ChatWindow />} />
       </Route>
