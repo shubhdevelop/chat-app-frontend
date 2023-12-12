@@ -1,4 +1,3 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
@@ -15,10 +14,12 @@ import { Login } from "./components/Login.tsx";
 import { SignUp } from "./components/SignUp.tsx";
 import Profile from "./components/profile/Profile.tsx";
 import { Bio, bioLoader } from "./components/Bio.tsx";
+import Call from "./components/call/Call.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<MainLayout />}>
+      <Route path="/call" element={<Call />}></Route>
       <Route index element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<SignUp />} />
