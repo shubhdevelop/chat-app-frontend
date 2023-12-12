@@ -52,18 +52,19 @@ const Preview = ({ isCalling, isVideo, isMuted }: Props) => {
   // capture();
   startWebcam();
 
-  const styleWhenCalling = `absolute bottom-4 drop-shadow-xl right-4 w-[300px]`;
+  const styleWhenCalling = `absolute bottom-4 drop-shadow-xl shadow-white right-4 w-[300px]`;
 
   return (
     <div>
       <div
         className={`bg-slate-700  flex flex-col mb-5 mx-4  items-center ${
           isCalling ? styleWhenCalling : ""
-        } rounded-lg overflow-auto rounded-t-lg  `}
+        } rounded-lg overflow-auto rounded-t-lg   `}
       >
         <video
           style={{
             transform: "rotateY(180deg)",
+            width: "300px",
           }}
           muted={false}
           ref={videoRef}

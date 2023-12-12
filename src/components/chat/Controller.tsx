@@ -64,13 +64,18 @@ const Controller = ({
       {isScreenSharing ? (
         <ScreenShare
           onClick={() => {
-            setIsScreenSharing((prev) => !prev);
+            setIsScreenSharing((prev) => {
+              setIsScreenSharing(false);
+              return !prev;
+            });
           }}
         />
       ) : (
         <ScreenShareOff
           onClick={() => {
-            setIsScreenSharing((prev) => !prev);
+            setIsScreenSharing((prev) => {
+              return !prev;
+            });
           }}
         />
       )}
