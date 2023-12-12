@@ -24,13 +24,13 @@ const Controller = ({
             return !prev;
           });
         }}
-        className="rounded-full bg-red-700  p-2 cursor-pointer "
+        className="rounded-full   p-2 cursor-pointer "
       >
         {isMuted ? <MicOff /> : <Mic />}
       </div>
 
       <div
-        className="rounded-full bg-red-700  p-2 cursor-pointer "
+        className="rounded-full p-2 cursor-pointer "
         onClick={() => {
           setIsVideo((prev) => {
             return !prev;
