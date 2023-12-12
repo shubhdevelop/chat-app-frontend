@@ -7,7 +7,7 @@ import { useState } from "react";
 function ChatWindow() {
   const [allChats, setAllChats] = useState(chats);
   return (
-    <div className="col-span-9 h-[calc(100vh-140px)] ">
+    <div className="col-span-9 h-full ">
       <ChatHeader name={"Shubham"} profilePic="https://github.com/shadcn.png" />
       <ChatArea allChats={allChats} />
       <TextInput setAllChats={setAllChats} />

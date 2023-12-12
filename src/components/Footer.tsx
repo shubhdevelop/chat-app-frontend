@@ -10,7 +10,7 @@ export const Footer = () => {
     <div
       className={`${
         isPathCall ? "hidden" : ""
-      } h-[70px] text-center border-t-2 p-2 npm install --save-dev tailwind-scrollbar`}
+      } h-[20px] text-center border-t-2 `}
     >
       <h4 className=" text-md font-semibold tracking-tight">
         <Link

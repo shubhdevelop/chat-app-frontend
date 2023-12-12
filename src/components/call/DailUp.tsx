@@ -12,12 +12,10 @@ type Props = {
 const DailUp = ({ isCalling, setIsCalling }: Props) => {
   return (
     <div
-      className={`${
-        isCalling ? "hidden" : ""
-      } w-[600px]  h-[300px] rounded-lg flex flex-row gap-4 justify-center items-center`}
+      className={`
+            h-[300px] rounded-lg flex flex-row gap-4 justify-center items-center`}
     >
-      <Preview />
-      <div className={`bg-slate-700 min-w-sm p-6 rounded-lg`}>
+      <div className={`bg-slate-700 min-w-max p-6 rounded-lg`}>
         <center>
           <Avatar className="w-20 h-20 mb-2">
             <AvatarImage src={"https://github.com/shadcn.png"} />
@@ -26,7 +24,7 @@ const DailUp = ({ isCalling, setIsCalling }: Props) => {
           <TypographyP className="text-white">Read to call?</TypographyP>
           <Button
             onClick={() => setIsCalling(true)}
-            className="mt-2"
+            className={` mt-2`}
             variant={"outline"}
           >
             Start Call

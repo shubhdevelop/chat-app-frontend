@@ -20,10 +20,10 @@ export const ChatHeader = ({ profilePic, name }: Props) => {
           </h4>
         </div>
         <div className="flex flex-row items-center gap-5">
-          <NavLink to={"/call/?has_video=true"}>
+          <NavLink unstable_viewTransition={true} to={"/call/?has_video=true"}>
             <Video size={30} strokeWidth={1} className=" cursor-pointer" />
           </NavLink>
-          <NavLink to={"/call/?has_video=false"}>
+          <NavLink unstable_viewTransition={true} to={"/call/?has_video=false"}>
             <Phone size={30} strokeWidth={1} className=" cursor-pointer" />
           </NavLink>
           <MoreVertical size={30} strokeWidth={1} className=" cursor-pointer" />

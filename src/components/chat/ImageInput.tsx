@@ -20,7 +20,7 @@ const ImageInput: React.FC<TextInputProps> = ({
         // Check if the selected file is an image
         if (file.type.startsWith("image/") || file.type.startsWith("video/")) {
           setIsPreviewVisible(true);
-          // Do something with the selected image (e.g., set it to state)
+          // Do something with the selected image (e.g., set it to
           const reader = new FileReader();
           reader.onloadend = () => {
             //runs when reader done with reading

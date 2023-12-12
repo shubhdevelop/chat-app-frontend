@@ -8,10 +8,6 @@ import { TypographyH2 } from "./typo/Typography";
 import { NavLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
-  const currPath = useLocation().pathname;
-  console.log(currPath);
-  const isPathCall = currPath == "/call/";
-
   return (
     <nav className="h-[70px]  border-b-2 flex flex-row gap-6 justify-between align-middle">
       <NavLink unstable_viewTransition={true} to={"/"}>
