@@ -1,8 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export const Footer = () => {
+  const currPath = useLocation().pathname;
+  console.log(currPath);
+  const isPathCall = currPath == "/call/";
+  console.log(isPathCall);
+
   return (
-    <div className="h-[70px] text-center border-t-2 p-2 npm install --save-dev tailwind-scrollbar">
+    <div
+      className={`${
+        isPathCall ? "hidden" : ""
+      } h-[70px] text-center border-t-2 p-2 npm install --save-dev tailwind-scrollbar`}
+    >
       <h4 className=" text-md font-semibold tracking-tight">
         <Link
           className="text-blue-600 underline"
