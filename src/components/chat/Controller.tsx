@@ -1,4 +1,12 @@
-import { MicOff, Mic, Video, VideoOff, PhoneOff } from "lucide-react";
+import {
+  MicOff,
+  Mic,
+  Video,
+  VideoOff,
+  PhoneOff,
+  ScreenShareOff,
+  ScreenShare,
+} from "lucide-react";
 import React, { SetStateAction } from "react";
 
 type Props = {
@@ -7,6 +15,8 @@ type Props = {
   setIsVideo: React.Dispatch<SetStateAction<boolean>>;
   isMuted: boolean;
   setIsMuted: React.Dispatch<SetStateAction<boolean>>;
+  isScreenSharing: boolean;
+  setIsScreenSharing: React.Dispatch<SetStateAction<boolean>>;
 };
 
 const Controller = ({
@@ -15,6 +25,8 @@ const Controller = ({
   isVideo,
   setIsMuted,
   setIsVideo,
+  isScreenSharing,
+  setIsScreenSharing,
 }: Props) => {
   return (
     <div className=" bg-white max-w-min gap-4 px-4 flex justify-center items-center rounded-full h-[50px] absolute bottom-[5px] drop-shadow-lg shadow-emerald-800 ">
@@ -48,7 +60,7 @@ const Controller = ({
       >
         <PhoneOff />
       </div>
-      {/* 
+
       {isScreenSharing ? (
         <ScreenShare
           onClick={() => {
@@ -61,7 +73,7 @@ const Controller = ({
             setIsScreenSharing((prev) => !prev);
           }}
         />
-      )} */}
+      )}
     </div>
   );
 };

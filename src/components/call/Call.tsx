@@ -9,12 +9,12 @@ const Call = () => {
   const [isMuted, setIsMuted] = useState(false);
   const [isVideo, setIsVideo] = useState(false);
   const [isCalling, setIsCalling] = useState(false);
+  const [isScreenSharing, setIsScreenSharing] = useState(false);
 
   const [searchParams, setSearchParams] = useSearchParams();
   useEffect(() => {
     const hasVideo = searchParams.get("has_video");
     setIsVideo(() => (hasVideo === "true" ? true : false));
-    setSearchParams("");
   }, []);
 
   return (
@@ -22,6 +22,8 @@ const Call = () => {
       {isCalling ? <ReceiverVideo /> : null}
 
       <Controller
+        isScreenSharing={isScreenSharing}
+        setIsScreenSharing={setIsScreenSharing}
         isVideo={isVideo}
         setIsVideo={setIsVideo}
         isMuted={isMuted}
