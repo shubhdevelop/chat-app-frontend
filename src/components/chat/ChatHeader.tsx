@@ -1,7 +1,7 @@
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { MoreVertical, Phone, Video } from "lucide-react";
+import { Phone, Video } from "lucide-react";
 import { NavLink } from "react-router-dom";
-
+import Option from "./Option";
 type Props = {
   profilePic: string;
   name: string;
@@ -26,7 +26,7 @@ export const ChatHeader = ({ profilePic, name }: Props) => {
           <NavLink unstable_viewTransition={true} to={"/call/?has_video=false"}>
             <Phone size={30} strokeWidth={1} className=" cursor-pointer" />
           </NavLink>
-          <MoreVertical size={30} strokeWidth={1} className=" cursor-pointer" />
+          <Option />
         </div>
       </div>
     </div>

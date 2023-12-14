@@ -19,7 +19,7 @@ const Call = () => {
   }, []);
 
   return (
-    <div className="w-full bg-green-100 h-full flex mt-1 relative lg:flex-row justify-center items-center rounded-lg">
+    <div className="w-full h-full flex mt-1 relative lg:flex-row justify-center items-center rounded-lg">
       {isCalling ? <ReceiverVideo isScreenSharing={isScreenSharing} /> : null}
       {isCalling && isScreenSharing ? (
         <ScreenShare setIsScreenSharing={setIsScreenSharing} />

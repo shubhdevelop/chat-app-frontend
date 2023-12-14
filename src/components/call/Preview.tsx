@@ -1,22 +1,22 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 
 type Props = {
   isCalling: boolean;
   isVideo: boolean;
   isMuted: boolean;
 };
-const Preview = ({ isCalling, isVideo, isMuted }: Props) => {
+const Preview: React.FC<Props> = ({ isCalling, isVideo, isMuted }) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const startWebcam = async () => {
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({
+      const stream: MediaStream = await navigator.mediaDevices.getUserMedia({
         video: isVideo,
         audio: true,
       });
 
       if (videoRef.current && stream) {
         if (isMuted && isVideo) {
-          const VideoTracks = stream.getVideoTracks();
+          const VideoTracks: MediaStreamTrack[] = stream.getVideoTracks();
 
           if (VideoTracks.length > 0) {
             const videoStreamOnly = new MediaStream(VideoTracks);
@@ -49,8 +49,8 @@ const Preview = ({ isCalling, isVideo, isMuted }: Props) => {
       }
     }
   };
-  // capture();
   startWebcam();
+  capture();
 
   const styleWhenCalling = `absolute bottom-4 drop-shadow-xl shadow-white right-4 w-[300px]`;
 
@@ -63,8 +63,7 @@ const Preview = ({ isCalling, isVideo, isMuted }: Props) => {
       >
         <video
           style={{
-            transform: "rotateY(180deg)",
-            width: "300px",
+            transform: "rotateY(-180deg)",
           }}
           muted={false}
           ref={videoRef}
