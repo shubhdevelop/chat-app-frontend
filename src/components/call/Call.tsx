@@ -10,7 +10,7 @@ const Call = () => {
   const [isMuted, setIsMuted] = useState(false);
   const [isVideo, setIsVideo] = useState(false);
   const [isCalling, setIsCalling] = useState(false);
-  const [isScreenSharing, setIsScreenSharing] = useState(true);
+  const [isScreenSharing, setIsScreenSharing] = useState(false);
 
   const [searchParams] = useSearchParams();
   useEffect(() => {
