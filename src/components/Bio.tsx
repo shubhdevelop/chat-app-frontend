@@ -27,6 +27,7 @@ const bioLoader = async ({ params }: any) => {
   console.log(url);
 
   const response = await axios.get(url);
+  return response;
 };
 
 export { Bio, bioLoader };
