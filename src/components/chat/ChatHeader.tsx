@@ -1,4 +1,4 @@
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Phone, Video } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import Option from "./Option";
@@ -12,9 +12,12 @@ export const ChatHeader = ({ profilePic, name }: Props) => {
     <div className="border-b h-[70px] flex  flex-row  items-center ">
       <div className="w-full flex gap-4 flex-row justify-between">
         <div className="flex gap-4 flex-row">
-          <Avatar>
-            <AvatarImage src={profilePic} />
-          </Avatar>
+          <NavLink to={"/profile"}>
+            <Avatar className="relative top-[5px] ">
+              <AvatarImage src={profilePic} />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
+          </NavLink>
           <h4 className="text-xl font-semibold mt-[5px] tracking-tight">
             {name}
           </h4>

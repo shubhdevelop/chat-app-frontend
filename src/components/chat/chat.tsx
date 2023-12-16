@@ -1,5 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card } from "../ui/card";
+import { NavLink } from "react-router-dom";
 
 type Props = {
   message: string;
@@ -20,10 +21,12 @@ function chat({ message, profilePic, varient, img }: Props) {
         varient === "sent" ? "flex-row-reverse" : "flex-row"
       } my-1 gap-2`}
     >
-      <Avatar className="relative top-[5px] ">
-        <AvatarImage src={profilePic} />
-        <AvatarFallback>CN</AvatarFallback>
-      </Avatar>
+      <NavLink to={`/profile`} unstable_viewTransition={true}>
+        <Avatar className="relative top-[5px] ">
+          <AvatarImage src={profilePic} />
+          <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
+      </NavLink>
       <Card className={` text-white max-w-4xl w-max py-2 px-4 ${style}`}>
         {img ? (
           <img src={img} alt="" onClick={() => {}} />
