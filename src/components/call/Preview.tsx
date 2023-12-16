@@ -65,7 +65,7 @@ const Preview: React.FC<Props> = ({ isCalling, isVideo, isMuted }) => {
           style={{
             transform: "rotateY(-180deg)",
           }}
-          muted={false}
+          muted={true}
           ref={videoRef}
           width={1000}
           height={360}
